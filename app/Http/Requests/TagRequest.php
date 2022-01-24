@@ -26,7 +26,8 @@ class TagRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'name' => 'required|min:5|max:255',
+            'slug' => 'required|unique:tags'
         ];
     }
 
@@ -50,7 +51,9 @@ class TagRequest extends FormRequest
     public function messages()
     {
         return [
-            //
+            'name.required' => 'Please provide valid name which is between 5 and 255 characters.',
+            'slug.required' => 'You should provide valid unique slug.',
+            'slug.unique' => 'The slug that you have provided has already been used by another tag.'
         ];
     }
 }
