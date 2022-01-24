@@ -46,6 +46,13 @@ class ItemCrudController extends CrudController
                 'model'     => "App\Models\Tag", // foreign key model
                 'attribute' => 'name', // foreign key attribute that is shown to user
                 'pivot'     => true, // on create&update, do you need to add/delete pivot table entries?
+            ],
+            [
+                'label' => "Item Image",
+                'name' => "image",
+                'type' => 'image',
+                'crop' => true, // set to true to allow cropping, false to disable
+                'aspect_ratio' => 1, // omit or set to 0 to allow any aspect ratio
             ]
         ];
     }
@@ -71,18 +78,8 @@ class ItemCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::column('id');
-        CRUD::column('item_name');
-        CRUD::column('description');
-        CRUD::column('stock');
-        CRUD::column('created_at');
-        CRUD::column('updated_at');
-
-        /**
-         * Columns can be defined using the fluent syntax or array syntax:
-         * - CRUD::column('price')->type('number');
-         * - CRUD::addColumn(['name' => 'price', 'type' => 'number']); 
-         */
+        $this->crud->set('show.setFromDb', false);
+        $this->crud->addColumns($this->getFieldsData(TRUE));
     }
 
     /**
@@ -119,7 +116,7 @@ class ItemCrudController extends CrudController
     {
         $this->setupCreateOperation();
     }
-    
+
     protected function setupShowOperation()
     {
         // by default the Show operation will try to show all columns in the db table,
