@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 25, 2022 at 10:25 AM
+-- Generation Time: Jan 25, 2022 at 12:47 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -136,7 +136,11 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (5, '2022_01_24_101746_create_tags_table', 1),
 (6, '2022_01_24_103422_create_item_tags_table', 1),
 (7, '2022_01_24_103803_create_items_table', 1),
-(8, '2022_01_24_113436_add_image_to_items_table', 1);
+(8, '2022_01_24_113436_add_image_to_items_table', 1),
+(9, '2022_01_25_094223_create_testimonials_table', 2),
+(10, '2022_01_25_095354_add_image_to_testimonials_table', 3),
+(11, '2022_01_25_105646_create_teams_table', 4),
+(12, '2022_01_25_111239_add_image_to_teams_table', 5);
 
 -- --------------------------------------------------------
 
@@ -192,6 +196,63 @@ INSERT INTO `tags` (`id`, `name`, `slug`, `created_at`, `updated_at`) VALUES
 (3, 'outfit', '/outfit', NULL, NULL),
 (4, 'dinner', '/dinner', NULL, NULL),
 (5, 'original', '/original', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `teams`
+--
+
+CREATE TABLE `teams` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `job` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `github_url` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `facebook_url` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `instagram_url` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `linkedin_url` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `teams`
+--
+
+INSERT INTO `teams` (`id`, `name`, `job`, `description`, `github_url`, `facebook_url`, `instagram_url`, `linkedin_url`, `created_at`, `updated_at`, `image`) VALUES
+(1, 'Wahyu Budi Utomo', 'CTO', 'Testing Gaes', 'https://github.com/wahyubudii', 'https://github.com/wahyubudii', 'https://github.com/wahyubudii', 'https://github.com/wahyubudii', NULL, '2022-01-25 04:36:16', 'storage/teams/a130f04c5a8131f8807732c06695dbd5.jpg'),
+(2, 'Ilham Darmawan', 'CEO', 'Testing gaes', 'https://github.com/wahyubudii', 'https://github.com/wahyubudii', 'https://github.com/wahyubudii', 'https://github.com/wahyubudii', NULL, '2022-01-25 04:35:53', 'storage/teams/2463a8c2ac92e8d89ad748de597a541e.jpg'),
+(3, 'Wahyu Budi Utomo', 'CMO', 'Testing Gaes', 'https://github.com/wahyubudii', 'https://github.com/wahyubudii', 'https://github.com/wahyubudii', 'https://github.com/wahyubudii', NULL, NULL, 'storage/teams/5edba31221b7181b54ba9b0151e5e0e5.jpg'),
+(4, 'Wahyu Budi Utomo', 'CFO', 'Testing Gaes', 'https://github.com/wahyubudii', 'https://github.com/wahyubudii', 'https://github.com/wahyubudii', 'https://github.com/wahyubudii', NULL, NULL, 'storage/teams/4d9ef4e2a0041fededd8101578c700b0.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `testimonials`
+--
+
+CREATE TABLE `testimonials` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `job` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `comment` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `testimonials`
+--
+
+INSERT INTO `testimonials` (`id`, `name`, `job`, `comment`, `created_at`, `updated_at`, `image`) VALUES
+(1, 'Firdatul Nurul', 'Software Engineer at Tokopedia', 'Mantap gaes, recommended!', NULL, '2022-01-25 03:41:19', 'storage/testimonials/24735b7587d582cd0fc6178f32916339.jpg'),
+(2, 'Muhammad Rafly Arifani', 'Front End Developer at Github', 'Murah Poll iki', NULL, NULL, 'storage/testimonials/fbd614e23ad5c9d2fba192ec5d7109a7.jpg'),
+(3, 'Farid Agung', 'Backend Engineer at Youtube', 'Gasss gaes, no tipu tipu iki', NULL, NULL, 'storage/testimonials/c7cb23176edb825e34d9fb31c4dcdb74.jpg'),
+(4, 'Bagus Hendrawan', 'Freelancer', 'Udah 2x sewa, ga pernah ngecewain', NULL, '2022-01-25 03:47:57', 'storage/testimonials/146da4bb8e612c524e540005bf060f72.jpg'),
+(5, 'Cholid Wirawan', 'Youtuber', 'Adminnya ramah ramah jadi sayang', NULL, NULL, 'storage/testimonials/daa10f4054bc558c8b19f62aca2637c2.jpg');
 
 -- --------------------------------------------------------
 
@@ -269,6 +330,18 @@ ALTER TABLE `tags`
   ADD UNIQUE KEY `tags_slug_unique` (`slug`);
 
 --
+-- Indexes for table `teams`
+--
+ALTER TABLE `teams`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `testimonials`
+--
+ALTER TABLE `testimonials`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -301,7 +374,7 @@ ALTER TABLE `item_tags`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -313,6 +386,18 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `tags`
 --
 ALTER TABLE `tags`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `teams`
+--
+ALTER TABLE `teams`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `testimonials`
+--
+ALTER TABLE `testimonials`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --

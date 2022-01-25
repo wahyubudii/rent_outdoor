@@ -3,3 +3,4 @@
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('tag') }}'><i class='nav-icon la la-question'></i> Tags</a></li>
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('item') }}'><i class='nav-icon la la-question'></i> Items</a></li>
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('testimonial') }}'><i class='nav-icon la la-question'></i> Testimonials</a></li>
+<li class='nav-item'><a class='nav-link' href='{{ backpack_url('team') }}'><i class='nav-icon la la-question'></i> Teams</a></li>
