@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Item;
 use Illuminate\Http\Request;
 
 class IndexController extends Controller
 {
     public function index() {
-        //Get data from DB in here and pass it to the view
-    
-        return view('layouts.app');
+        $items = Item::all();
+        return view('dashboard.index', compact('items'));
     }
 }
