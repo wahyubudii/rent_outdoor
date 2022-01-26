@@ -141,7 +141,7 @@
           <p>{{ucwords($item->tags[0]["name"])}}</p>
           <a href="{{$item->image}} " data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="{{$item->item_name}}"><i class="bx bx-plus"></i></a>
           <!-- <a href="{{url('item/'.$item->id.'/')}}" class="details-link" title="More Details"><i class="bx bx-link"></i></a> -->
-          <a href="item{{$item->id}}" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+          <a href="item" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
         </div>
       </div>
       @endforeach
