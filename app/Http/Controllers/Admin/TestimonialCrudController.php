@@ -35,7 +35,8 @@ class TestimonialCrudController extends CrudController
             [
                 'name' => 'comment',
                 'label' => 'Komentar',
-                'type' => 'text',
+                // 'type' => 'text',
+                'type' => ($show ? "textarea" : 'ckeditor'),
             ],
             [
                 'label' => "Photo",

@@ -9,7 +9,8 @@ use Illuminate\Http\Request;
 
 class IndexController extends Controller
 {
-    public function index() {
+    public function index()
+    {
         $items = Item::all();
         $testimonials = Testimonial::all();
         $teams = Team::all();

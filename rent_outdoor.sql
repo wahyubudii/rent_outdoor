@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 25, 2022 at 12:47 PM
+-- Generation Time: Jan 26, 2022 at 07:35 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -73,7 +73,7 @@ INSERT INTO `items` (`id`, `item_name`, `description`, `stock`, `created_at`, `u
 (13, 'Telur Ayam', '<p>Testing</p>', 63, NULL, '2022-01-25 01:51:10', 'storage/items/5f0cc34982b806675b18cbe4de9f44fe.jpg'),
 (14, 'Korek Api', '<p>Testing</p>', 52, NULL, NULL, 'storage/items/e38f7dbc24d39e46652a8a4233977764.jpg'),
 (16, 'Sendok', '<p>Testing</p>', 33, NULL, '2022-01-25 01:52:39', 'storage/items/535eb822e785d3360071be7dc7236699.jpg'),
-(17, 'Kompor', '<p>Testing</p>', 51, NULL, NULL, 'storage/items/ffd2db17d686215aa05361b6edb3bd09.jpg');
+(17, 'Kompor', '<p>Kompor ini sangat bagus digunakan berpergian</p>', 51, NULL, '2022-01-25 21:13:10', 'storage/items/ffd2db17d686215aa05361b6edb3bd09.jpg');
 
 -- --------------------------------------------------------
 
@@ -222,10 +222,10 @@ CREATE TABLE `teams` (
 --
 
 INSERT INTO `teams` (`id`, `name`, `job`, `description`, `github_url`, `facebook_url`, `instagram_url`, `linkedin_url`, `created_at`, `updated_at`, `image`) VALUES
-(1, 'Wahyu Budi Utomo', 'CTO', 'Testing Gaes', 'https://github.com/wahyubudii', 'https://github.com/wahyubudii', 'https://github.com/wahyubudii', 'https://github.com/wahyubudii', NULL, '2022-01-25 04:36:16', 'storage/teams/a130f04c5a8131f8807732c06695dbd5.jpg'),
-(2, 'Ilham Darmawan', 'CEO', 'Testing gaes', 'https://github.com/wahyubudii', 'https://github.com/wahyubudii', 'https://github.com/wahyubudii', 'https://github.com/wahyubudii', NULL, '2022-01-25 04:35:53', 'storage/teams/2463a8c2ac92e8d89ad748de597a541e.jpg'),
-(3, 'Wahyu Budi Utomo', 'CMO', 'Testing Gaes', 'https://github.com/wahyubudii', 'https://github.com/wahyubudii', 'https://github.com/wahyubudii', 'https://github.com/wahyubudii', NULL, NULL, 'storage/teams/5edba31221b7181b54ba9b0151e5e0e5.jpg'),
-(4, 'Wahyu Budi Utomo', 'CFO', 'Testing Gaes', 'https://github.com/wahyubudii', 'https://github.com/wahyubudii', 'https://github.com/wahyubudii', 'https://github.com/wahyubudii', NULL, NULL, 'storage/teams/4d9ef4e2a0041fededd8101578c700b0.jpg');
+(1, 'Rohmat Agung Yahya', 'CTO', '201910140311107', 'https://github.com/wahyubudii', 'https://github.com/wahyubudii', 'https://github.com/wahyubudii', 'https://github.com/wahyubudii', NULL, '2022-01-25 21:20:12', 'storage/teams/0904fe3ad11541ffb229755abff08b85.jpg'),
+(2, 'Moh.Ifkar Awallilhad', 'CEO', '201910140311103', 'https://github.com/wahyubudii', 'https://github.com/wahyubudii', 'https://github.com/wahyubudii', 'https://github.com/wahyubudii', NULL, '2022-01-25 20:22:59', 'storage/teams/49cf86674824771e9d7cac21f01f2728.jpg'),
+(3, 'Adinda Risky Nuraini', 'CMO', '201910140311098', 'https://github.com/wahyubudii', 'https://github.com/wahyubudii', 'https://github.com/wahyubudii', 'https://github.com/wahyubudii', NULL, '2022-01-25 20:22:26', 'storage/teams/d1f4f79054c29e00d7810c42b737b3f3.jpg'),
+(4, 'Yan Arif Maulana', 'CFO', '201710140311133', 'https://github.com/wahyubudii', 'https://github.com/wahyubudii', 'https://github.com/wahyubudii', 'https://github.com/wahyubudii', NULL, '2022-01-25 20:27:48', 'storage/teams/905f718c922f985e0e7b29269881885c.jpg');
 
 -- --------------------------------------------------------
 

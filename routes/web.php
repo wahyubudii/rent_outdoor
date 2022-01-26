@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\ItemDetailsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,4 +19,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('index', IndexController::class);
+Route::resource('/index', IndexController::class);
+Route::get('item', [ItemDetailsController::class, 'allItem']);
+Route::get('item/{id}', [ItemDetailsController::class, 'detailItem']);

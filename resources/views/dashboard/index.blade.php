@@ -67,7 +67,7 @@
         </p>
         <ul>
           <li><i class="bi bi-check-circle"></i> Perlengkapan yang disediakan sangat lengkap</li>
-          <li><i class="bi bi-check-circle"></i> Selain itu juga perlengkapan yang tersedia banyk, jadi gaperlu kehabisan</li>
+          <li><i class="bi bi-check-circle"></i> Selain itu juga perlengkapan yang tersedia banyak, jadi gaperlu kehabisan</li>
           <li><i class="bi bi-check-circle"></i> Harga sewa barang yang ekonomis</li>
           <li><i class="bi bi-check-circle"></i> Selain itu juga bisa request perlengkapan sesuai dengan kebutuhan</li>
           <li><i class="bi bi-check-circle"></i> Pelayanan yang ramah dan cepat</li>
@@ -140,7 +140,8 @@
           <h4>{{$item->item_name}}</h4>
           <p>{{ucwords($item->tags[0]["name"])}}</p>
           <a href="{{$item->image}} " data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="{{$item->item_name}}"><i class="bx bx-plus"></i></a>
-          <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+          <!-- <a href="{{url('item/'.$item->id.'/')}}" class="details-link" title="More Details"><i class="bx bx-link"></i></a> -->
+          <a href="item{{$item->id}}" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
         </div>
       </div>
       @endforeach
